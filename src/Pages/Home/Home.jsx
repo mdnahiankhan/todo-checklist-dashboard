@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <div className="h-full p-3 space-y-2 w-60 dark:text-gray-900 ">
-                <div className="flex items-center p-2 space-x-4">
+                <div className="flex items-center space-x-4">
                     <img src={photo} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
                     <div>
                         <h2 className="text-lg font-semibold">Todo list</h2>

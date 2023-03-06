@@ -14,7 +14,6 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center gap-4">
                     <Link to="/"><button>Homepage</button></Link>
-                    <button>Portfolio</button>
                     <button>About</button>
                 </div>
                 <div className="navbar-end">
