@@ -9,7 +9,7 @@ const Update = () => {
     const handleUpdate = event => {
         event.preventDefault();
         console.log(tasks);
-        fetch(`http://localhost:5000/allTodos/${storedTodos._id}`, {
+        fetch(`https://todo-checklist-server.vercel.app/allTodos/${storedTodos._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -19,7 +19,8 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success(`Your ${data} update ${tasks.name} is successfull. `)
+                console.log(data);
+                toast.success(`Your update ${tasks.name} is successfull. `)
                 navigate('/dashboard')
             })
     }
@@ -43,7 +44,7 @@ const Update = () => {
                 <input onChange={handleInputChange} type="text" defaultValue={storedTodos
                     .taskname} name="taskname" placeholder="write your todo name" className="input input-bordered w-full input-primary" />
                 <label htmlFor="">Enter date when you finish the task.</label>
-                <input type="date" placeholder="publish your date" className="input input-bordered input-primary w-full " disabled defaultValue={storedTodos.date} />
+                <input type="text" placeholder="publish your date" className="input input-bordered input-primary w-full " defaultValue={storedTodos.date} />
                 <label htmlFor="">Wrote description your todo</label>
                 <textarea onChange={handleInputChange} className="textarea textarea-primary w-full" placeholder="Description" name='description' defaultValue={storedTodos.description}></textarea>
                 <div className='flex justify-between text-center'>

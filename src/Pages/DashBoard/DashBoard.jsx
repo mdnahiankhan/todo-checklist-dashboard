@@ -10,7 +10,7 @@ const DashBoard = () => {
     const { data: allTodos, isLoading, refetch } = useQuery({
         queryKey: ['productsName'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allTodos')
+            const res = await fetch('https://todo-checklist-server.vercel.app/allTodos')
             const data = await res.json();
             return data;
         }
@@ -19,7 +19,7 @@ const DashBoard = () => {
         return <Loading></Loading>
     }
     const handledelete = data => {
-        fetch(`http://localhost:5000/allTodos/${data._id}`, {
+        fetch(`https://todo-checklist-server.vercel.app/allTodos/${data._id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
@@ -38,17 +38,18 @@ const DashBoard = () => {
 
     return (
         <div className='p-2'>
-            <h1>Hello This is from dashboard</h1>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 p-4'>
                 {
-                    allTodos.map(alltodo => <ShowTodos
-                        key={alltodo._id}
-                        alltodo={alltodo}
-                        refetch={refetch}
-                        setDeletingTodos={setDeletingTodos}
-                    ></ShowTodos>)
+                    allTodos
+                        ?.map(alltodo => <ShowTodos
+                            key={alltodo._id}
+                            alltodo={alltodo}
+                            refetch={refetch}
+                            setDeletingTodos={setDeletingTodos}
+                        ></ShowTodos>)
                 }
             </div>
+
             {
                 deletingTodos && <DeleteModal
                     title={`Are you want to delete this ${deletingTodos.name}`}

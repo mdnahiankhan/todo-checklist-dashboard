@@ -13,8 +13,8 @@ const ShowTodos = ({ alltodo, setDeletingTodos }) => {
                     <h1>{name}</h1>
                     <p>{description}</p>
                     <div className="card-actions justify-end">
-                        <label onClick={() => setDeletingTodos(alltodo)} htmlFor="confirmation-modal" className="btn btn-error btn-primary">Delete</label>
-                        <Link to={`/update/${_id}`}><button className="btn btn-outline btn-accent">Update</button></Link>
+                        <label onClick={() => setDeletingTodos(alltodo)} htmlFor="confirmation-modal" className="btn btn-error btn-primary btn-xs">Delete</label>
+                        <Link to={`/update/${_id}`}><button className="btn btn-outline btn-accent btn-xs">Update</button></Link>
                     </div>
                 </div>
             </div>

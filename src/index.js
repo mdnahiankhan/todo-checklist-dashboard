@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
+  QueryClient, QueryClientProvider,
+} from 'react-query';
+import 'react-day-picker/dist/style.css';
 
 const queryClient = new QueryClient()
 
