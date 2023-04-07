@@ -7,7 +7,10 @@ import ShowTodos from '../ShowTodos/ShowTodos';
 
 const DashBoard = () => {
     const [deletingTodos, setDeletingTodos] = useState(null)
-    const { data: allTodos, isLoading, refetch } = useQuery({
+
+
+
+    const { isLoading, refetch } = useQuery({
         queryKey: ['productsName'],
         queryFn: async () => {
             const res = await fetch('https://todo-checklist-server.vercel.app/allTodos')
@@ -15,6 +18,7 @@ const DashBoard = () => {
             return data;
         }
     })
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -33,26 +37,22 @@ const DashBoard = () => {
     const closeModal = () => {
         setDeletingTodos(null)
     }
-
-
+    // const handleSearch = (event) => {
+    //     const getsearch = event.target.value;
+    //     console.log(getsearch);
+    // }
 
     return (
         <div className='p-2'>
-            <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 p-4'>
-                {
-                    allTodos
-                        ?.map(alltodo => <ShowTodos
-                            key={alltodo._id}
-                            alltodo={alltodo}
-                            refetch={refetch}
-                            setDeletingTodos={setDeletingTodos}
-                        ></ShowTodos>)
-                }
+            <div className='w-full'>
+                <ShowTodos
+                    setDeletingTodos={setDeletingTodos}
+                ></ShowTodos>
             </div>
 
             {
                 deletingTodos && <DeleteModal
-                    title={`Are you want to delete this ${deletingTodos.name}`}
+                    title={`Are you want to delete this ${deletingTodos.name} Contact`}
                     message={`If you delete it. It can not retrived anymore`}
                     handledelete={handledelete}
                     modaldata={deletingTodos}

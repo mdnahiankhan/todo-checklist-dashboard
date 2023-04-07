@@ -8,7 +8,6 @@ const Update = () => {
     const navigate = useNavigate();
     const handleUpdate = event => {
         event.preventDefault();
-        console.log(tasks);
         fetch(`https://todo-checklist-server.vercel.app/allTodos/${storedTodos._id}`, {
             method: "PUT",
             headers: {
@@ -36,7 +35,7 @@ const Update = () => {
     return (
         <div className="modal-box relative mx-auto">
             <h1>This is update routes</h1>
-            <h3 className="text-lg font-bold mb-2">Update your todo {storedTodos.taskname}.</h3>
+            <h3 className="text-lg font-bold mb-2">Update your Contact informatio of {storedTodos.name}.</h3>
             <form onSubmit={handleUpdate} action="" className='flex flex-wrap gap-3'>
                 <label htmlFor="">Enter Your name</label>
                 <input type="text" placeholder="write your name" name='name' defaultValue={storedTodos.name} disabled className="input input-bordered w-full input-primary" />

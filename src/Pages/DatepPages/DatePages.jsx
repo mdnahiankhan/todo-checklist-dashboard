@@ -48,22 +48,22 @@ const DatePages = ({ selectedDate, setSelectedDate }) => {
                 </div>
             </div>
             {/* The button to open modal */}
-            <label htmlFor="my-modal-3" className="btn btn-outline btn-primary mt-5">Create Task</label>
+            <label htmlFor="my-modal-3" className="btn btn-outline btn-primary mt-5">Add Contact</label>
 
             {/* Put this part before </body> tag */}
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">
                     <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 className="text-lg font-bold mb-2">WellCome to Create todo list.</h3>
+                    <h3 className="text-lg font-bold mb-2">WellCome to Simple Adress Book Manager.</h3>
                     <form onSubmit={handleSubmit(dataSubmit)} action="" className='flex flex-wrap gap-3'>
                         <label htmlFor="">Enter Your name</label>
                         <input type="text" {...register("name")} placeholder="write your name" name='name' required className="input input-bordered w-full input-primary" />
-                        <label htmlFor="">Enter Task name</label>
-                        <input type="text" {...register("taskname")} placeholder="write your todo name" required className="input input-bordered w-full input-primary" />
-                        <label htmlFor="">Enter date when you finish the task.</label>
+                        <label htmlFor="">Enter Mobile Number</label>
+                        <input type="number" {...register("taskname")} placeholder="write your mobile number" required className="input input-bordered w-full input-primary" />
+                        <label htmlFor="">Enter date when you Contact.</label>
                         <input type="text" value={date} {...register("date")} placeholder="publish your date" className="input input-bordered input-primary w-full " />
-                        <label htmlFor="">Wrote description your todo</label>
+                        <label htmlFor="">Wrote a message for yor Contact</label>
                         <textarea className="textarea textarea-primary w-full" {...register("description")} required placeholder="Description"></textarea>
                         <div className='flex justify-between text-center'>
                             <button
