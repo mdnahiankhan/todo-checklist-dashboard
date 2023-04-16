@@ -6,10 +6,10 @@ const Home = () => {
     return (
         <div>
             <div className="h-full p-3 space-y-2 w-60 dark:text-gray-900 ">
-                <div className="flex items-center space-x-4">
-                    <img src={photo} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
+                <div className="flex items-center space-x-2">
+                    <img src={photo} alt="" className="w-10 h-10 rounded-full dark:bg-gray-500" />
                     <div>
-                        <h2 className="text-lg font-semibold">Todo list</h2>
+                        <h2 className="text-sm font-bold">Book Manager.</h2>
                         <span className="flex items-center space-x-1">
                             <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">View profile</Link>
                         </span>

@@ -12,7 +12,7 @@ const ShowTodos = ({ setDeletingTodos }) => {
             const reqData = await fetch('https://todo-checklist-server.vercel.app/allTodos');
             const resData = await reqData.json();
             SetUserData(resData);
-            SetfilterData(resData)
+            SetfilterData(resData);
         }
         getUserData();
     }, [])
@@ -25,12 +25,14 @@ const ShowTodos = ({ setDeletingTodos }) => {
             SetUserData(searchData);
         }
         else {
-            SetUserData(filterData)
-        };
+            SetUserData(filterData);
+        }
     }
     return (
-        <div>
-
+        <div className='p-4'>
+            <label className="label -mb-4 ml-4 font-semibold">
+                <span className="label-text">Please search your name with small letter and number.</span>
+            </label>
             <input type="text" value={query} onChange={(e) => handleSearch(e)} placeholder="Please type here to lowerCase" className="input m-4 input-bordered w-full max-w-xs" />
             <div>
                 <div>

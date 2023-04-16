@@ -35,18 +35,15 @@ const DashBoard = () => {
     }
 
     const closeModal = () => {
-        setDeletingTodos(null)
+        setDeletingTodos(null);
     }
-    // const handleSearch = (event) => {
-    //     const getsearch = event.target.value;
-    //     console.log(getsearch);
-    // }
 
     return (
         <div className='p-2'>
             <div className='w-full'>
                 <ShowTodos
                     setDeletingTodos={setDeletingTodos}
+                    refetch={refetch}
                 ></ShowTodos>
             </div>
 

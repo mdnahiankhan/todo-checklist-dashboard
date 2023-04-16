@@ -39,12 +39,12 @@ const Update = () => {
             <form onSubmit={handleUpdate} action="" className='flex flex-wrap gap-3'>
                 <label htmlFor="">Enter Your name</label>
                 <input type="text" placeholder="write your name" name='name' defaultValue={storedTodos.name} disabled className="input input-bordered w-full input-primary" />
-                <label htmlFor="">Enter Task name</label>
+                <label htmlFor="">Edit Contact Number</label>
                 <input onChange={handleInputChange} type="text" defaultValue={storedTodos
                     .taskname} name="taskname" placeholder="write your todo name" className="input input-bordered w-full input-primary" />
-                <label htmlFor="">Enter date when you finish the task.</label>
+                <label htmlFor="">Enter date..</label>
                 <input type="text" placeholder="publish your date" className="input input-bordered input-primary w-full " defaultValue={storedTodos.date} />
-                <label htmlFor="">Wrote description your todo</label>
+                <label htmlFor="">Edit message.</label>
                 <textarea onChange={handleInputChange} className="textarea textarea-primary w-full" placeholder="Description" name='description' defaultValue={storedTodos.description}></textarea>
                 <div className='flex justify-between text-center'>
                     <button
